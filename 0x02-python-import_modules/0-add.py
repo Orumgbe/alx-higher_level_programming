@@ -2,4 +2,4 @@
 from add_0 import add
 a = 1
 b = 2
-print(a, '+', b, '=', add_0.add(1, 2))
+print(a, '+', b, '=', add(1, 2))
