@@ -3,7 +3,8 @@ def multiple_returns(sentence):
     if len(sentence) == 0:
         x = 0
         char = 'None'
-    x = len(sentence)
-    char = sentence[:1]
+    else:
+        x = len(sentence)
+        char = sentence[:1]
     tuple_a = (x, char)
     return tuple_a
