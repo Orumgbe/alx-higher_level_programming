@@ -30,8 +30,8 @@ class Square:
     @position.setter
     def position(self, value):
         """Set conditions for position attribute"""
-        if isinstance(value, tuple):
-            if type(value[0]) in [int] and type(value[1]) in [int]:
+        if isinstance(value, tuple) and len(value) == 2:
+            if isinstance(value[0], int) and isinstance(value[1], int):
                 if value[0] >= 0 and value[1] >= 0:
                     self.__position = value
         else:
