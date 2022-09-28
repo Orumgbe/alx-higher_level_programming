@@ -30,13 +30,12 @@ class Square:
     @position.setter
     def position(self, value):
         """Set conditions for position attribute"""
-        if type(value) not in [tuple]:
+        if isinstance(value, tuple):
+            if type(value[0]) in [int] and type(value[1]) in [int]:
+                if value[0] >= 0 and value[1] >= 0:
+                    self.__position = value
+        else:
             raise TypeError("position must be a tuple of 2 positive integers")
-        if type(value[0]) not in [int] or type(value[1]) not in [int]:
-            raise TypeError("position must be a tuple of 2 positive integers")
-        if value[0] < 0 or value[1] < 0:
-            raise TypeError("position must be a tuple of 2 positive integers")
-        self.__position = value
 
     def area(self):
         """Returns area of the square"""
