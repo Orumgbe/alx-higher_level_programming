@@ -32,9 +32,9 @@ class Square:
         """Set conditions for position attribute"""
         if type(value) not in [tuple]:
             raise TypeError("position must be a tuple of 2 positive integers")
-        elif type(value[0]) not in [int] or type(value[1]) not in [int]:
+        if type(value[0]) not in [int] or type(value[1]) not in [int]:
             raise TypeError("position must be a tuple of 2 positive integers")
-        elif value[0] < 0 or value[1] < 0:
+        if value[0] < 0 or value[1] < 0:
             raise TypeError("position must be a tuple of 2 positive integers")
         self.__position = value
 
