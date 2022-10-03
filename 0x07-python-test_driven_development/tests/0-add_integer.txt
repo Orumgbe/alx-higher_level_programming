@@ -35,7 +35,7 @@ OverflowError: cannot convert float infinity to integer
 checking integer infinity
 >>> add_integer(5, float("NAN"))
 Traceback (most recent call last):
-ValueError: invalid literal for int() with base 10: 'inf'
+ValueError: cannot convert float NAN to integer
 
 checking without parameters
 >>> add_integer()
