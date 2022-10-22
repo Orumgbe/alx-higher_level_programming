@@ -6,16 +6,6 @@ class Square:
     """Class that defines a square"""
     def __init__(self, size=0, position=(0, 0)):
         """initialise for every instance"""
-        if type(size) not in [int]:
-            raise TypeError("size must be an integer")
-        if size < 0:
-            raise ValueError("size must be >= 0")
-        if not (isinstance(position, tuple)):
-            raise TypeError("position must be a tuple of 2 integers")
-        if len(position) != 2:
-            raise TypeError("position must be a tuple of 2 positive integers")
-        if isinstance(position[0], int) and isinstance(position[1], int):
-            raise TypeError("position must be a tuple of 2 positive integers")
         self.__size = size
         self.__position = position
 
