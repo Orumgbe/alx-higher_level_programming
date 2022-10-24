@@ -13,7 +13,9 @@ if __name__ == "__main__":
 
     try:
         arg_list = load_from_json_file(filename)
-    except:
+    except FileNotFoundError:
+        arg_list = []
+    except ValueError:
         arg_list = []
 
     for i in range(1, len(sys.argv)):
