@@ -17,8 +17,7 @@ class Student:
         """Retrieves dictionary representation of a Student instance
             Args: attrs (list of attributes to retrieve in dictionary)"""
         if attrs is not None:
-            for key in self.__dict__.keys():
-                if key in attrs:
-                    my_dict = {key: self.__dict__[key]}
-                    return my_dict
-        return (self.__dict__)
+            my_d = {k: self.__dict__[k] for k in self.__dict__.keys() & attrs}
+            return my_d
+        else:
+            return (self.__dict__)
