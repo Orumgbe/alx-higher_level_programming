@@ -28,4 +28,4 @@ class Student:
                 The dictionary key becomes the instance attribute
                 The dictionary key value becomes the value of the attribute"""
         for k, v in json.items():
-            self.__setattr__(key, value)
+            self.__setattr__(k, v)
