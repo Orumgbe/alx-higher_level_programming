@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+#Grants execute right to files in current working directory, except readme
+list=$(ls)
+for files in $list
+do
+if [ "$files" != "README.md" ]
+then
+	check="$files | cut -d ' ' -f N"
+	if [ "$check" != "executable" ]
+	then
+	chmod u+x "$files"
+	fi
+fi
+done
