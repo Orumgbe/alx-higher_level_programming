@@ -6,20 +6,23 @@
  * 1, if it is a palindrome
  */
 int is_palindrome(listint_t** head) {
-	listint_t *left, *right, *temp;
+	listint_t *right;
+	int arr[1000];
+	int i = 0, j = 0, k;
 	if (*head == NULL || (*head)->next == NULL)
 		return (1);
-	right = left = temp = *head;
-	while (right->next != NULL)
+	right = *head;
+	while (right != NULL) {
+		arr[j] = right->n;
 		right = right->next;
-	while (left != right && left->next != right) {
-		if (left->n != right->n)
+		j++;
+	}
+	k = j;
+	while (i <= (k/2)) {
+		if (arr[i] != arr[j])
 			return (0);
-		while (temp->next != right)
-			temp = temp->next;
-		right = temp;
-		left = left->next;
-		temp = left;
+		i++;
+		j--;
 	}
 	return (1);
 }
