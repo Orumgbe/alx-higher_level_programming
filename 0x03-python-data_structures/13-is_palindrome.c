@@ -7,12 +7,12 @@
  */
 int is_palindrome(listint_t** head) {
 	listint_t *left, *right, *temp;
-	if (*head == NULL || (*head)->next)
+	if (*head == NULL || (*head)->next == NULL)
 		return (1);
 	right = left = temp = *head;
 	while (right->next != NULL)
 		right = right->next;
-	while (left != right || left->next != right) {
+	while (left != right && left->next != right) {
 		if (left->n != right->n)
 			return (0);
 		while (temp->next != right)
