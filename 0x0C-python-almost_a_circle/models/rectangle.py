@@ -41,7 +41,7 @@ class Rectangle(Base):
     def height(self, value):
         """Setter for height"""
         if type(value) is not int:
-           raise TypeError("height must be an integer")
+            raise TypeError("height must be an integer")
         if value <= 0:
             raise ValueError("height must be > 0")
         self.__height = value
@@ -87,13 +87,13 @@ class Rectangle(Base):
 
     def __str__(self):
         """Returns string representation of object"""
-        return ("[Rectangle] ({}) {}/{} - {}/{}".format(type(self).__name__,
+        return ("[{}] ({}) {}/{} - {}/{}".format(type(self).__name__,self.id,
                                                         self.__x, self.__y,
                                                         self.__width,
                                                         self.__height))
 
     def update(self, *args, **kwargs):
-       """Assigns argument to each attribute"""
+        """Assigns argument to each attribute"""
         if (len(args) != 0):
             attr = ["id", "width", "height", "x", "y"]
             n = 0
@@ -106,7 +106,8 @@ class Rectangle(Base):
 
     def to_dictionary(self):
         """Returns dictionary representation of Rectangle class"""
-        return {'id': getattr(self, "id"),
-                'size': getattr(self, "width"),
-                'x': getattr(self, "x"),
-                'y': getattr(self, "y")}
+        return {'x': getattr(self, "x"),
+                'y': getattr(self, "y"),
+                'id': getattr(self, "id"),
+                'height': getattr(self, "height"),
+                'width': getattr(self, "width")}
