@@ -29,8 +29,7 @@ class Square(Rectangle):
     def __str__(self):
         """Returns string representation of object"""
         return ("[{}] ({}) {}/{} - {}".format(type(self).__name__, self.id,
-                                                  self.x, self.y,
-                                                  self.height))
+                                              self.x, self.y, self.height))
 
     def update(self, *args, **kwargs):
         """Assigns keyworded attributes"""

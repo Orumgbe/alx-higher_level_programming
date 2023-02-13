@@ -87,10 +87,10 @@ class Rectangle(Base):
 
     def __str__(self):
         """Returns string representation of object"""
-        return ("[{}] ({}) {}/{} - {}/{}".format(type(self).__name__,self.id,
-                                                        self.__x, self.__y,
-                                                        self.__width,
-                                                        self.__height))
+        return ("[{}] ({}) {}/{} - {}/{}".format(type(self).__name__, self.id,
+                                                 self.__x, self.__y,
+                                                 self.__width,
+                                                 self.__height))
 
     def update(self, *args, **kwargs):
         """Assigns argument to each attribute"""
