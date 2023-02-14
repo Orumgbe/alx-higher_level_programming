@@ -3,6 +3,7 @@
 
 
 import json
+import turtle
 
 
 class Base:
@@ -31,6 +32,26 @@ class Base:
         if json_string is None or len(json_string) == 0:
             return []
         return json.loads(json_string)
+
+    @staticmethod
+    def draw(list_rectangles, list_squares):
+        for r in list_rectangles:
+            rec = turtle.Turtle()
+            rec.hideturtle()
+            for i in range(2):
+                rec.forward(r.width)
+                rec.left(90)
+                rec.forward(r.height)
+                rec.left(90)
+
+        for s in list_squares:
+            squ = turtle.Turtle()
+            squ.hideturtle()
+            for i in range(2):
+                rec.forward(s.size)
+                rec.left(90)
+                rec.forward(s.size)
+                rec.left(90)
 
     @classmethod
     def save_to_file(cls, list_objs):
