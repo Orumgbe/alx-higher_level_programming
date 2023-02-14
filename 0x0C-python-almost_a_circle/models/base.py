@@ -44,7 +44,7 @@ class Base:
                 mylist.append(json_dict_obj)
 
         with open(fname, 'w', encoding='utf-8') as wf:
-                json.dump(mylist, wf)
+            json.dump(mylist, wf)
 
     @classmethod
     def create(cls, **dictionary):
