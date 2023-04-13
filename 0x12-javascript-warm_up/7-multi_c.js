@@ -2,7 +2,7 @@
 
 // Prints text a given number of times
 const text = 'C is fun';
-let k = process.argv[2];
+const k = process.argv[2];
 
 if (isNaN(Number(k))) {
   console.log('Missing number of occurences');
