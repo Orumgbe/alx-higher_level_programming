@@ -2,7 +2,7 @@
 
 // Searches for the second biggest integer in list of arguments
 if (process.argv.length < 4) {
-  console.log(0);
+  console.log('0');
 } else {
   const args = [];
 
