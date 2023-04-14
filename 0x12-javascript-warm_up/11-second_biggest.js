@@ -9,6 +9,6 @@ if (process.argv.length < 4) {
   for (let i = 2; i < process.argv.length; i++) {
     args[i - 2] = process.argv[i];
   }
-  args.sort();
-  console.log(args[args.length - 2]);
+  args.sort(function(a, b) {return b - a});
+  console.log(args[1]);
 }
