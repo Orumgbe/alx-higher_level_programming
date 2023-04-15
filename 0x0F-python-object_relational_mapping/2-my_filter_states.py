@@ -27,7 +27,7 @@ if __name__ == '__main__':
         exit(1)
 
     try:
-        cur.execute("SELECT * FROM states WHERE name like '{}'\
+        cur.execute("SELECT * FROM states WHERE name like BINARY '{}'\
                      ORDER BY states.id ASC".format(search))
         rows = cur.fetchall()
     except MySQLdb.Error as e:
