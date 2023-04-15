@@ -25,7 +25,7 @@ if __name__ == '__main__':
         exit(1)
 
     try:
-        cur.execute("SELECT * FROM states WHERE name like 'N%'\
+        cur.execute("SELECT * FROM states WHERE name like BINARY 'N%'\
                     ORDER BY states.id ASC")
         rows = cur.fetchall()
     except MySQLdb.Error as e:
