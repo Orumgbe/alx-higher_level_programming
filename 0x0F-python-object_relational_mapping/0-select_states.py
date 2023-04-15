@@ -6,7 +6,7 @@ import sys
 import MySQLdb
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     """module main function"""
     uname = sys.argv[1]
     pwd = sys.argv[2]
@@ -32,7 +32,6 @@ if __name__ == "__main__":
             print("MySQL Error [{}]: {}".format(e.args[0], e.args[1]))
         except IndexError:
             print("MySQL Error: {}".format(e))
-    finally:
         cur.close()
         db.close()
         exit(1)
