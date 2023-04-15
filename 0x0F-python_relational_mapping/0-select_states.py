@@ -6,13 +6,16 @@ import sys
 import MySQLdb
 
 
-if __name__=="__main__":
+if __name__ == "__main__":
     """module main function"""
     uname = sys.argv[1]
     pwd = sys.argv[2]
     dbname = sys.argv[3]
     try:
-        db = MySQLdb.connect(host='localhost', user=uname, passwd=pwd, db=dbname, port=3306)
+        db = MySQLdb.connect(host='localhost',
+                             user=uname,
+                             passwd=pwd,
+                             db=dbname, port=3306)
         cur = db.cursor()
     except MySQLdb.Error as e:
         try:
