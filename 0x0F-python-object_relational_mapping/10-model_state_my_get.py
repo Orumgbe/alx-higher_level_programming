@@ -14,7 +14,7 @@ if __name__ == '__main__':
     session = Session()
 
     state = session.query(State).filter(State.name == "{}"\
-                                        .format(sys.argv[4])).first()
+                                        .format(sys.argv[4])).one_or_none()
     if (state):
         print("{}".format(state.id))
     else:
