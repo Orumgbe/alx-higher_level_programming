@@ -1,4 +1,4 @@
-#!usr/bin/python3
+#!/usr/bin/python3
 """A little documentaTION"""
 
 import sys
@@ -13,8 +13,7 @@ if __name__ == '__main__':
 
     cursor = db.cursor()
 
-    cursor.execute("SELECT * FROM states WHERE name = %s ORDER BY id ASC",
-                    (sys.argv[4]))
+    cursor.execute("SELECT * FROM states WHERE name = {} ORDER BY states.id ASC".format(sys.argv[4]))
 
     states = cursor.fetchall()
     for state in states:
