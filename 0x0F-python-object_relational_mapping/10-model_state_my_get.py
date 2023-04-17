@@ -15,7 +15,7 @@ if __name__ == '__main__':
 
     state = session.query(State).filter(State.name == "{}"\
                                         .format(sys.argv[4])).one_or_none()
-    if (state):
-        print("{}".format(state.id))
-    else:
+    if state is None:
         print("Not found")
+    else:
+        print("{}".format(state.id))
