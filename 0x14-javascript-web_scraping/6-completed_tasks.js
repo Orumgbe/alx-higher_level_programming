@@ -13,7 +13,7 @@ request(url, function (err, response, body) {
 
   for (let i = 0; i < bodyObj.length; i++) {
     const tmp = bodyObj[i].userId;
-    if (pBody[i].completed) {
+    if (bodyObj[i].completed) {
       users[tmp] = (users[tmp] || 0) + 1;
     }
   }
