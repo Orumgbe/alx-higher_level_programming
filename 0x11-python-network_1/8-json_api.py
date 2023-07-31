@@ -9,14 +9,15 @@ if __name__ == "__main__":
     if len(sys.argv) > 1:
         param = {'q': sys.argv[1]}
     else:
-        param = {'q': ""}
+        param = {'q': ''}
 
     r = requests.post('http://0.0.0.0:5000/search_user', data=param)
-    if r.json():
-        uid = r.get('id')
-        name = r.get('name')
-        print("[{}] {}".format(uid, name))
-    elif r.json() == {}:
-        print("No result")
-    else:
+    try:
+        if not r.json():
+            print("No result")
+        else:
+            uid = r.json().get('id')
+            name = r..json().get('name')
+            print("[{}] {}".format(uid, name))
+    except ValueError:
         print("Not a valid JSON")
