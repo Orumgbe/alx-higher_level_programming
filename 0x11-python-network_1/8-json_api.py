@@ -13,8 +13,8 @@ if __name__ == "__main__":
 
     r = requests.post('http://0.0.0.0:5000/search_user', data=param)
     if r.json():
-        uid = r.json().get('id')
-        name = r.json().get('name')
+        uid = r.get('id')
+        name = r.get('name')
         print("[{}] {}".format(uid, name))
     elif r.json() == {}:
         print("No result")
