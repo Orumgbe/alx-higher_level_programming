@@ -17,7 +17,7 @@ if __name__ == "__main__":
             print("No result")
         else:
             uid = r.json().get('id')
-            name = r..json().get('name')
+            name = r.json().get('name')
             print("[{}] {}".format(uid, name))
     except ValueError:
         print("Not a valid JSON")
